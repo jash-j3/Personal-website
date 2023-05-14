@@ -36,6 +36,7 @@
             <div class="loader-section section-right"></div>
         </div>
     </div>
+
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top bg-body-tertiary bg-dark invisible"
         data-bs-theme="dark" id="invisible">
         <div class="container-fluid">
@@ -58,10 +59,14 @@
             </form>
         </div>
     </nav>
+
+
+    <div id="scroll" class="invisible"></div>
+
     <div class="box1">
         <div class="headerr1">
             <div class="profile-pic-div">
-                <img src="Screenshot_20221023_002041.png" alt="profile-pic" class="profile-pic" />
+                <img src="profile-1.jpg" alt="profile-pic" class="profile-pic" />
             </div>
             <div class="namee">
                 <h1>Jash J. Jhatakia</h1>
@@ -70,20 +75,25 @@
             <div class="social-links">
                 <ul>
                     <li>
-                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://twitter.com/Jcube8990?t=ZInUvi5qMbv__m0PnLtsxQ&s=09" target="_blank"><i
+                                class="fab fa-twitter"></i></a>
                     </li>
                     <li>
-                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.linkedin.com/in/jash-jhatakia-04897b226" target="_blank"><i
+                                class="fab fa-linkedin-in"></i></a>
                     </li>
                     <li>
-                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/jcube_8990?igshid=OTk0YzhjMDVlZA==" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
                     </li>
                 </ul>
             </div>
             <div class="personal-details">
-                <h4>+91 9426023104</h4>
-                <h4>jash.jhatakia@gmail.com</h4>
-                <h4>cs22btech11028@iith.ac.in</h4>
+                <h4><a href="tel:+91946023104" style="text-decoration: none;" class="mailme">+91 9426023104</a></h4>
+                <h4><a href="mailto:jash.jhatakia@gmail.com" style="text-decoration: none;"
+                        class="mailme">jash.jhatakia@gmail.com</a></h4>
+                <h4><a href="mailto:cs22btech11028@iith.ac.in" style="text-decoration: none;"
+                        class="mailme">cs22btech11028@iith.ac.in</a></h4>
             </div>
         </div>
         <div class="content">
@@ -95,12 +105,15 @@
                     </h1>
 
                     <p>
-                        I have made this Website for the Task for the Web Domain of
+                        I have made this Website for the Task of the Web Domain of
                         <span class="ecell1">E-Cell</span>, IITH. This simple website just
                         resembles a personal blog page giving information about myself.
                     </p>
                     <button type="button" class="btn btn-success">
                         <a href="mailto:cs22btech11028@iith.ac.in" class="mailme">Mail Me</a>
+                    </button>
+                    <button type="button" class="btn btn-success" style="margin-left:10px;">
+                        <a href="tel:+91946023104" class="mailme">Call Me</a>
                     </button>
                 </div>
                 <div class="img2 item">
@@ -198,8 +211,7 @@
                             Website inspired by the Website of popular
                             Front-End Developer, Sean Halpin</a>, and a
                         <a href="https://jash-j3.github.io/j3-MindGym" style="color: black">Simple Website for a
-                            fictional educational institute, Jcube
-                            MindGym</a>.
+                            fictional educational institute, j3-MindGym</a>.
                     </p>
                 </div>
             </div>
@@ -279,6 +291,11 @@
             </div>
         </section>
     </div>
+    <p style="color: rgb(157, 154, 154); text-align: center; padding-top: 10px; font-style: poppins;">Made by, Jash
+        Jhatakia, CS22BTECH11028. It is NOT any template and each part is created on my own, using the help of standard
+        sources like MDN Docs, etc. This website is responsive, which has a breakpoint at width of 1032px. This website
+        has a custom scrollbar, a progressbar at the top, a preloader page, some animations, etc, and many other
+        features.<br>Thanking You, Jcube...</p>
     <script src="https://kit.fontawesome.com/e402329cbc.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
@@ -291,6 +308,7 @@
 
                 if ($("#container").hasClass("loaded")) {
                     $("#invisible").removeClass("invisible");
+                    $("#scroll").removeClass("invisible");
                     $("#preloader")
                         .delay(9000)
                         .queue(function () {
@@ -299,6 +317,13 @@
                 }
             }, 3000);
         });
+    </script>
+    <script>
+        $(window).scroll(function () {
+            var scroll = $(window).scrollTop(), dh = $(document).height(), wh = $(window).height();
+            scrollPercent = (scroll / (dh - wh)) * 100;
+            $('#scroll').css('width', scrollPercent + '%');
+        })
     </script>
 </body>
 
